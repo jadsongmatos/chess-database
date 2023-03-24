@@ -63,7 +63,17 @@ const ROOKS = {
 export class Chess {
   constructor() {}
 
-  clear() {}
+  clear() {
+    this._board = new Array<Piece>(128)
+    this._kings = { w: EMPTY, b: EMPTY }
+    this._turn = WHITE
+    this._castling = { w: 0, b: 0 }
+    this._epSquare = EMPTY
+    this._halfMoves = 0
+    this._moveNumber = 1
+    this._history = []
+    this._updateSetup()
+  }
 
   reset() {}
 
